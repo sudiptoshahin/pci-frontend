@@ -1,7 +1,7 @@
 "use client"
 
 import PromotionalSection from "@/components/common/promotionalsection";
-import ProductGrid from "@/components/products/productgrid";
+import ProductGrid from "@/components/products/ProductGrid";
 import OutletAddress from "@/components/common/outletaddress";
 import PromotionalVideo from "@/components/common/promotionalvideo";
 import Navbar from "@/components/common/navbar";
@@ -55,17 +55,11 @@ export default function Home() {
 
   return (
     <div className="">
-      {/* <div className="relative">
-        <div className="absolute top-0 left-0 right-0 z-100">
-          <Navbar />
-        </div>
-        <BannerCarousel />
-      </div> */}
       <Navbar />
       <BannerCarousel />
       <PromotionalSection />
 
-      <div>
+      <div className="">
         {
           dummyData.map((data, index) => (
             <ProductGrid key={index} title={data.title} banner={data.banner} items={data.items} />
