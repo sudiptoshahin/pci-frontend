@@ -20,22 +20,28 @@ export default function BannerCarousel() {
     const carouseItems = [
         {
             id: 1,
-            image: "/images/banner1.webp",
+            image: "/images/new_arrivals_bg1.jpg",
             title: "Houseware",
+            textColor: '#000000',
+            buttonBg: '#ffffff',
             buttonText: "Shop now",
             link: "/houseware"
         },
         {
             id: 2,
-            image: "/images/banner2.webp",
+            image: "/images/sale_bg3.jpg",
             title: "Hotelware",
+            textColor: '#000000',
+            buttonBg: '#ffffff',
             buttonText: "Shop now",
             link: "/hotelware"
         },
         {
             id: 3,
-            image: "/images/banner3.webp",
+            image: "/images/ciramic1.jpg",
             title: "Giftware",
+            textColor: '#ffffff',
+            buttonBg: '#000000',
             buttonText: "Shop now",
             link: "/giftware"
         }
@@ -46,16 +52,17 @@ export default function BannerCarousel() {
         <div className="w-full">
             <Slider {...settings}>
                 {
-                    carouseItems.map((item) => (
-                        <div key={item.id} className="w-full h-[900px] relative">
+                    carouseItems.length > 0 && carouseItems.map((item) => (
+                        <div key={item.id} className="w-full h-[800px] relative">
                             <div className="absolute z-100 navbar-transparent-fg w-full h-full"></div>
                             <Image src={item.image} alt={item.title} fill style={{ objectFit: "cover" }} />
                             <div className="absolute z-200 right-3 md:right-14 bottom-50 md:bottom-40">
-                                <h1 className="text-[#380010] text-[70px] md:text-[100px] a_bold">{item.title}</h1>
+                                <h1 className='text-[70px] md:text-[100px] a_bold' style={{ color: item.textColor }}>{item.title}</h1>
                                 <div className="flex justify-end mt-2">
-                                    <button className="group cursor-pointer border border-[#380010] text-[16px] md:text-[18px] w-[120px] md:w-[148px] h-[48px] 
-                            p_semibold text-[#380010] hover:bg-[#e22a2a] hover:text-white hover:border-none 
-                            flex items-center justify-center">
+                                    <button className='group cursor-pointer border text-[16px] md:text-[18px] w-[120px] md:w-[148px] h-[48px] 
+                            p_semibold hover:bg-[${item.buttonBg}] hover:text-[${item.textColor}] hover:border-none 
+                            flex items-center justify-center'
+                            style={{ borderColor: item.textColor, color: item.textColor}}>
                                         <p>
                                             <Link href={item.link}>Shop now</Link>
                                         </p>

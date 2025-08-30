@@ -18,6 +18,9 @@ const config: Config = {
       },
     },
     screens: {
+      xxs: "375px",
+      xs: "414px",
+      "2sm": "576px",
       sm: "640px",  // Small devices (mobile)
       md: "768px",  // Medium devices (tablets)
       lg: "1024px", // Large devices (laptops)
