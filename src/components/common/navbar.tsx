@@ -3,94 +3,154 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
+// icons
+import iconMob from "../../../public/images/icons/mobile.svg";
+import MultiCheckedSelectBox from "./MultiSelectCheckbox";
+import { ISelectedCategory } from "@/types/common";
+import SearchIcon from "../../../public/images/icons/magnify.svg";
+import CartIcon from "../../../public/images/icons/cart.svg";
+import NotificationIcon from "../../../public/images/icons/notification.svg";
+import AccountIcon from "../../../public/images/icons/account.svg";
 
 export default function Navbar() {
 
     const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
     const [showSearch, setShowSearch] = useState<boolean>(false);
 
+    const [selectedCategories, setSelectedCategories] = useState<Array<ISelectedCategory>>([]);
+    const [searchText, setSearchText] = useState<string>("");
+
+
+    const demoCategories = [
+        {
+            id: '1',
+            label: 'Test A',
+            value: 'TEST_A'
+        },
+        {
+            id: '2',
+            label: 'Test B',
+            value: 'TEST_B'
+        },
+        {
+            id: '3',
+            label: 'Test C',
+            value: 'TEST_C'
+        },
+        {
+            id: '4',
+            label: 'Test D',
+            value: 'TEST_D'
+        },
+        {
+            id: '5',
+            label: 'Test E',
+            value: 'TEST_E'
+        }
+    ];
+
     function handleShowMenu(e: React.MouseEvent<HTMLDivElement, MouseEvent>) {
         e.stopPropagation();
         setIsMenuOpen(!isMenuOpen);
     }
 
+    function handleSearchText(e: React.ChangeEvent<HTMLInputElement>) {
+        setSearchText(e.target.value)
+    }
+
     return (
-        <section className="w-full h-[100px] md:h-[100px] bg-white/[.50] drop-shadow-md flex flex-col">
-
-            <div className="w-full flex items-center justify-between md:justify-around px-7 md:px-5 mb-5 h-[100px]">
-                <div className="md:w-[20%]">
-                    <p className="a_bold text-[20px]">PCI Online Shop</p>
+        <section className="fixed z-[1000] top-0 w-full h-[100px] lg:h-[150px] backdrop-blur-[40px] bg-white/[.60] drop-shadow-md flex flex-col">
+            {/* Top Bar */}
+            <div className="lg:h-[50px] bg-[#FFD88E]/[.80] flex items-center justify-between lg:px-7">
+                <div className="h-full w-[35%] flex items-center gap-x-[10px] cursor-pointer" onClick={() => { }}>
+                    <h6 className="font-lato font-semibold text-[14px] text-black">Download App</h6>
+                    <Image src={iconMob} alt="mob" />
                 </div>
 
-                {/* Mobile menu button */}
-                <div className="md:hidden flex justify-end" onClick={(e) => handleShowMenu(e)}>
-                    {
-                        isMenuOpen ? (
-                            <Image src={'/images/icons/menu_open.svg'} alt="mob-menu" width={24} height={24} />
-                        ) : (
-                            <Image src={'/images/icons/menu.svg'} alt="mob-menu" width={24} height={24} />
-                        )
-                    }
-                </div>
-
-                <div className="hidden md:w-[60%] md:flex items-center justify-around text-[#380010] w-full mob-screen-fw md:w-[85%] lg:w-[70%] xl:w-[60%] 
-                p_medium text-[16px] lg:text-[18px]">
-                    <div className="px-1 cursor-pointer text-shadow-md hover:text-white hover:bg-[#380010]/[0.70] 
-                    hover:a_bold min-w-[100px] h-[50px] flex items-center justify-center hover:skew-x-2 transition-all duration-200">
-                        <Link href="/">Home</Link>
-                    </div>
-                    <div className="px-1 cursor-pointer text-shadow-md hover:text-white hover:bg-[#380010]/[0.70] 
-                    hover:a_bold min-w-[100px] h-[50px] flex items-center justify-center hover:skew-x-2 transition-all duration-200">
-                        <Link href="/houseware">Houseware</Link>
-                    </div>
-
-                    <div className="px-1 cursor-pointer text-shadow-md hover:text-white hover:bg-[#380010]/[0.70] 
-                    hover:a_bold min-w-[100px] h-[50px] flex items-center justify-center hover:skew-x-2 transition-all duration-200">
-                        <Link href="/hotelware">Hotelware</Link>
-                    </div>
-
-                    <div className="px-1 cursor-pointer text-shadow-md hover:text-white hover:bg-[#380010]/[0.70] 
-                    hover:a_bold min-w-[100px] h-[50px] flex items-center justify-center hover:skew-x-2 transition-all duration-200">
-                        <Link href="/giftware">Giftware</Link>
-                    </div>
-
-                    <div className="px-1 cursor-pointer text-shadow-md hover:text-white hover:bg-[#380010]/[0.70] 
-                    hover:a_bold min-w-[100px] h-[50px] flex items-center justify-center hover:skew-x-2 transition-all duration-200">
-                        <Link href="/contact-us">Contact Us</Link>
-                    </div>
-
-                    {/* <div className="px-1.5 cursor-pointer text-shadow-md hover:text-white hover:bg-[#380010]/[0.70] 
-                    hover:a_bold min-w-[100px] h-[50px] flex items-center justify-center hover:skew-x-2 transition-all duration-200">
-                                <Link href="/giftware">My Account</Link>
-                            </div> */}
-
-                </div>
-                <div className="hidden md:flex md:w-[20%] items-center justify-end space-x-3">
-                    {
-                        showSearch && (
-                            <div className="border border-px border-[#380010] bg-white rounded-lg 
-                    flex items-center justify-between px-2">
-                                <input type="text" placeholder="Search..." className="rounded-lg p-2 text-[#380010] focus:outline-none" style={{ width: '100%' }} />
-                                <div onClick={() => setShowSearch(!showSearch)}>
-                                    <Image src={'/images/icons/search.svg'} alt="search" width={24} height={24} className="" />
-                                </div>
-                            </div>
-                        )
-                    }
-                    {
-                        !showSearch && (
-                            <div className="w-[24px] h-[24px]" onClick={() => setShowSearch(!showSearch)}>
-                                <Image src={'/images/icons/search.svg'} alt="search" width={24} height={24} className="" />
-                            </div>
-                        )
-                    }
-                    <div className="w-[30px] h-[30px]">
-                        <Image src={'/images/icons/shopping_cart.svg'} alt="shopping_cart" width={30} height={30} />
-                    </div>
-                    <div className="w-[30px] h-[30px]">
-                        <Image src={'/images/icons/account.svg'} alt="shopping_cart" width={30} height={30} />
+                <div className="max-w-[1000px] w-[65%] h-full">
+                    <div className="w-full h-full font-lato text-[16px] text-black flex items-center justify-around">
+                        <Link href={"#"}>
+                            <div className="">Houseware</div>
+                        </Link>
+                        <Link href={"#"}>
+                            <div>Hotelware</div>
+                        </Link>
+                        <Link href={"#"}>
+                            <div>Giftware</div>
+                        </Link>
+                        <Link href={"#"}>
+                            <div>About</div>
+                        </Link>
+                        <Link href={"#"}>
+                            <div>Contact us</div>
+                        </Link>
+                        <Link href={"#"}>
+                            <div>FAQ</div>
+                        </Link>
+                        |
+                        <Link href={"#"}>
+                            <div className="font-bold">Signup</div>
+                        </Link>
+                        <Link href={"#"}>
+                            <div className="font-bold">Login</div>
+                        </Link>
                     </div>
                 </div>
+            </div>
+
+            <div className="w-full lg:h-[100px] flex items-center justify-between md:justify-around lg:px-7">
+                <div className="w-[20%]">
+                    <p className="font-poppins font-700 text-xl">PCI Online Shop</p>
+                </div>
+
+                {/* search bar */}
+                <div className="w-[60%] max-w-[1200px] h-[40px] bg-white flex gap-x-2 rounded-md outline outline-1 outline-offset-1 outline-[#636869]">
+                    <div className="w-[25%]">
+                        <MultiCheckedSelectBox
+                            // context={'payment'}
+                            placeholderText={'All Category'}
+                            boxClasses={'w-full h-[38px] text-black'}
+                            dropdownCardClasses={'mt-3 bg-white rounded-sm border border-px border-black cursor-default'}
+                            checkedColor={{
+                                background: '#000000',
+                                borderColor: '#000000'
+                            }}
+                            defaultSelects={[]}
+                            options={demoCategories}
+                            selectedOptions={selectedCategories}
+                            setSelectedOptions={setSelectedCategories}
+                        />
+                    </div>
+
+                    <div className="w-[75%] h-full">
+                        <div className="w-full flex items-center gap-x-2">
+                            <p className="ml-[0.5px] mr-2"> | </p>
+                            <Image src={SearchIcon} alt="search" className="h-[40px] mx-3" />
+                            <input className="w-full h-[40px] outline-none indent-2" type="text" onChange={handleSearchText} value={searchText} placeholder="Search here....." />
+                        </div>
+                    </div>
+
+                </div>
+
+                {/* buttons */}
+                <div className="w-[20%] flex items-center justify-end space-x-3">
+                    <div className="w-[50px] h-[50px] flex items-center justify-center">
+                        <Link href={"#"} className="w-auto h-auto">
+                            <Image src={CartIcon} alt="cart" />
+                        </Link>
+                    </div>
+                    <div className="w-[50px] h-[50px] flex items-center justify-center">
+                        <Link href={"#"} className="w-auto h-auto">
+                            <Image src={NotificationIcon} alt="bell" />
+                        </Link>
+                    </div>
+                    <div className="w-[50px] h-[50px] flex items-center justify-center">
+                        <Link href={"#"} className="w-auto h-auto">
+                            <Image src={AccountIcon} alt="account" />
+                        </Link>
+                    </div>
+                </div>
+
             </div>
 
             {/* text-[#380010] */}

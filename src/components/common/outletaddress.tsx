@@ -7,17 +7,17 @@ export default function OutletAddress() {
     return (
         <section>
             <div
-                className="w-full bg-slate-300 mt-[50px] flex flex-col md:flex-row items-center"
-                style={{
-                    backgroundImage: 'url("/images/outlet_bg.jpg")',
-                    backgroundSize: "cover",
-                    backgroundPosition: "center",
-                }}
+                className="w-full mt-[50px] flex flex-col md:flex-row items-center bg-white  border border-px"
+                // style={{
+                //     backgroundImage: 'url("/images/outlet_bg.jpg")',
+                //     backgroundSize: "cover",
+                //     backgroundPosition: "center",
+                // }}
             >
                 {/* Left Image */}
                 <div className="relative aspect-square w-full md:w-[50%] h-[300px] md:h-auto">
                     <Image
-                        src={"/images/outlet_pic1.jpeg"}
+                        src={"/images/outlet_pic2.jpeg"}
                         alt="asd"
                         fill
                         style={{ objectFit: "cover" }}

@@ -1,33 +1,6 @@
-@import "tailwindcss";
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-/* :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
-} */
-
 
 .navbar-transparent-bg {
   /* background-color: #e22a2a; */
@@ -47,120 +20,8 @@ body {
     background-color: rgba(189, 189, 189, 0.3);
 }
 
-/** Fonts **/
-/* @font-face {
-  font-family: "pbold";
-  src: url("../../public/fonts/PoppinsBold.ttf");
-} */
-@font-face {
-  font-family: "p_bold";
-  src: url("/fonts/PoppinsBold.ttf") format("truetype");
-  font-style: normal;
-}
 
-@font-face {
-  font-family: "p_extrabold";
-  src: url("/fonts/PoppinsExtraBold.ttf") format("truetype");
-  font-style: normal;
-}
 
-@font-face {
-  font-family: "p_light";
-  src: url("/fonts/PoppinsLight.ttf") format("truetype");
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "p_medium";
-  src: url("/fonts/PoppinsMedium.ttf") format("truetype");
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "p_regular";
-  src: url("/fonts/PoppinsRegular.ttf") format("truetype");
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "p_semibold";
-  src: url("/fonts/PoppinsSemiBold.ttf") format("truetype");
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "p_thin";
-  src: url("/fonts/PoppinsThin.ttf") format("truetype");
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "a_bold";
-  src: url("/fonts/AlmaraiBold.ttf") format("truetype");
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "a_extrabold";
-  src: url("/fonts/AlmaraiExtraBold.ttf") format("truetype");
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "a_light";
-  src: url("/fonts/AlmaraiLight.ttf") format("truetype");
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "a_regular";
-  src: url("/fonts/AlmaraiRegular.ttf") format("truetype");
-  font-style: normal;
-}
-
-.p_bold {
-  font-family: "p_bold", sans-serif;
-}
-
-.p_extrabold {
-  font-family: "p_extrabold", sans-serif;
-}
-
-.p_light {
-  font-family: "p_light", sans-serif;
-}
-
-.p_medium {
-  font-family: "p_medium", sans-serif;
-}
-
-.p_regular {
-  font-family: "p_regular", sans-serif;
-}
-
-.p_semibold {
-  font-family: "p_semibold", sans-serif;
-}
-
-.p_thin {
-  font-family: "p_thin", sans-serif;
-}
-
-.a_bold {
-  font-family: "a_bold", sans-serif;
-}
-
-.a_extrabold {
-  font-family: "a_extrabold", sans-serif;
-}
-
-.a_light {
-  font-family: "a_light", sans-serif;
-}
-
-.a_regular {
-  font-family: "a_regular", sans-serif;
-}
 
 @media screen and (min-width: 768px) and (max-width: 800px) {
   .mob-screen-fw {

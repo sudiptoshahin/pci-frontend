@@ -14,7 +14,8 @@ export default function BannerCarousel() {
         speed: 4800,
         slidesToShow: 1,
         slidesToScroll: 1,
-        arrows: false
+        arrows: false,
+        zIndex: 10,
     };
 
     const carouseItems = [
@@ -49,14 +50,14 @@ export default function BannerCarousel() {
 
 
     return (
-        <div className="w-full">
+        <div className="w-full mt-[150px]">
             <Slider {...settings}>
                 {
                     carouseItems.length > 0 && carouseItems.map((item) => (
                         <div key={item.id} className="w-full h-[800px] relative">
-                            <div className="absolute z-100 navbar-transparent-fg w-full h-full"></div>
+                            <div className="navbar-transparent-fg w-full h-full"></div>
                             <Image src={item.image} alt={item.title} fill style={{ objectFit: "cover" }} />
-                            <div className="absolute z-200 right-3 md:right-14 bottom-50 md:bottom-40">
+                            <div className="absolute z-10 right-3 md:right-14 bottom-50 md:bottom-40">
                                 <h1 className='text-[70px] md:text-[100px] a_bold' style={{ color: item.textColor }}>{item.title}</h1>
                                 <div className="flex justify-end mt-2">
                                     <button className='group cursor-pointer border text-[16px] md:text-[18px] w-[120px] md:w-[148px] h-[48px] 
