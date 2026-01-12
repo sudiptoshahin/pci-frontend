@@ -15,7 +15,7 @@ import AccountIcon from "../../../public/images/icons/account.svg";
 export default function Navbar() {
 
     const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
-    const [showSearch, setShowSearch] = useState<boolean>(false);
+    // const [showSearch, setShowSearch] = useState<boolean>(false);
 
     const [selectedCategories, setSelectedCategories] = useState<Array<ISelectedCategory>>([]);
     const [searchText, setSearchText] = useState<string>("");

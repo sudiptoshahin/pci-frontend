@@ -10,7 +10,17 @@ const compat = new FlatCompat({
 });
 
 const eslintConfig = [
+  // Next.js default rules
   ...compat.extends("next/core-web-vitals", "next/typescript"),
+
+  // Your overrides
+  {
+    rules: {
+      "@typescript-eslint/no-explicit-any": "off",
+    },
+  },
+
+  // Ignore folders
   {
     ignores: [
       "node_modules/**",

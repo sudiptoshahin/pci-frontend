@@ -1,9 +1,9 @@
 import { useState, useRef, useEffect, Dispatch, SetStateAction } from 'react';
-import { ICategory } from '@/types/products';
+// import { ICategory } from '@/types/products';
 import { IOption, ISelectedCategory } from '@/types/common';
-import Image from 'next/image';
+// import Image from 'next/image';
 import { MdArrowDropDown } from "react-icons/md";
-import { IconContext } from "react-icons";
+// import { IconContext } from "react-icons";
 
 
 // import { Image } from 'antd';
@@ -42,7 +42,7 @@ interface MultiCheckedSelectBoxProps {
  */
 
 export default function MultiCheckedSelectBox({
-    context,
+    // context,
     placeholderText,
     boxClasses = '',
     dropdownCardClasses = '',
