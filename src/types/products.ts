@@ -1,4 +1,12 @@
-export interface IProductItem { title: string; price: string; image: string };
+export interface IProductItem {
+    id: string;
+    title: string;
+    price: string;
+    discountedPrice: string;
+    image: string;
+    review: number;
+    reviewers: number;
+};
 
 
 export interface ICategory {

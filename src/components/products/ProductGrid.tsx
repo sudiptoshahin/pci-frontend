@@ -8,7 +8,10 @@ import { IProductItem } from "@/types/products";
 export default function ProductGrid({ title, banner, items }: { title: string, banner: string, items: Array<IProductItem> }) {
     return (
 
-        <section className="mt-[50px] mx-5">
+// xs:grid xs:grid-cols-2 xs:gap-4
+//       mid-sm:flex mid-sm:flex-wrap mid-sm:items-center mid-sm:justify-center 2sm:space-x-5 space-y-14 2sm:space-y-2
+
+        <section className="mt-[50px] mx-5 bg-red-200">
             <div className="w-full min-h-[700px] 
       flex flex-wrap items-center justify-center space-x-5 space-y-2"
             >

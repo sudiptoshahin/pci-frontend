@@ -25,9 +25,11 @@ const config: Config = {
       "2sm": "576px",
       sm: "640px",
       md: "768px",
+      "semi_lg": "992px",
       lg: "1024px",
-      xl: "1280px",
+      xl: "1200px",
       "2xl": "1536px",
+      "4xl": "1920px"
     },
   },
   plugins: [],

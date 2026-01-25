@@ -8,6 +8,7 @@ import Navbar from "@/components/common/navbar";
 import BannerCarousel from "@/components/carousels/BannerCarousel";
 import Link from "next/link";
 import Image from "next/image";
+import ProductItem from "@/components/products/ProductItem";
 
 export default function Home() {
 
@@ -53,19 +54,138 @@ export default function Home() {
     }
   ];
 
+  const demoHotelwearItems = [
+    {
+      id: '101',
+      title: "Elegant Pattern 1842",
+      price: "2500",
+      discountedPrice: "2250",
+      image: "/images/hotelware/hotel1.jpg",
+      review: 4.5,
+      reviewers: 120
+    },
+    {
+      id: '102',
+      title: "Classic Floral 1620",
+      price: "1800",
+      discountedPrice: "1650",
+      image: "/images/hotelware/hotel2.jpg",
+      review: 3.8,
+      reviewers: 64
+    },
+    {
+      id: '103',
+      title: "Modern Line Art 1901",
+      price: "3200",
+      discountedPrice: "2999",
+      image: "/images/hotelware/hotel3.jpg",
+      review: 4.9,
+      reviewers: 210
+    },
+    {
+      id: '104',
+      title: "Minimal White Set 1507",
+      price: "2100",
+      discountedPrice: "1950",
+      image: "/images/hotelware/hotel4.png",
+      review: 4.1,
+      reviewers: 88
+    },
+    {
+      id: '105',
+      title: "Premium Gold Rim 1754",
+      price: "4500",
+      discountedPrice: "4200",
+      image: "/images/hotelware/hotel5.png",
+      review: 4.7,
+      reviewers: 156
+    },
+    {
+      id: '106',
+      title: "Soft Pastel Touch 1689",
+      price: "2300",
+      discountedPrice: "2150",
+      image: "/images/hotelware/hotel6.jpg",
+      review: 3.9,
+      reviewers: 47
+    },
+    {
+      id: '107',
+      title: "Vintage Blue Craft 1422",
+      price: "2800",
+      discountedPrice: "2600",
+      image: "/images/hotelware/hotel7.jpg",
+      review: 4.3,
+      reviewers: 99
+    },
+    {
+      id: '108',
+      title: "Luxury Marble Finish 1983",
+      price: "5200",
+      discountedPrice: "4890",
+      image: "/images/hotelware/hotel8.jpg",
+      review: 4.8,
+      reviewers: 134
+    },
+    {
+      id: '109',
+      title: "Eco Green Line 1603",
+      price: "1900",
+      discountedPrice: "1750",
+      image: "/images/hotelware/hotel9.jpg",
+      review: 3.6,
+      reviewers: 32
+    },
+    {
+      id: '110',
+      title: "Royal Pattern Set 1866",
+      price: "3600",
+      discountedPrice: "3350",
+      image: "/images/hotelware/hotel10.jpg",
+      review: 4.6,
+      reviewers: 178
+    }
+  ];
+
   return (
     <div className="">
-      <Navbar />
-      <BannerCarousel />
-      <PromotionalSection />
+      <div className="lg:mb-[130px] xl:mb-[150px]">
+        <Navbar />
+      </div>
 
-      <div className="">
+      <div className="mb-[50px]">
+        <BannerCarousel />
+      </div>
+
+      <div className="mb-10">
+        <PromotionalSection />
+      </div>
+
+      <div className="mb-10">
+        <h1 className="font-lato font-semibold text-2xl py-3 2sm:px-5 px-7">Housewear</h1>
+
+        {/* products layout */}
+        <div className="px-2 2sm:px-3 semi_lg:px-7 w-full grid grid-cols-2 semi_lg:grid-cols-3 xl:grid-cols-4 gap-5">
+
+          {
+            demoHotelwearItems.map((item) => (
+              <ProductItem id={item.id} title={item.title} price={item.price} discountedPrice={item.discountedPrice} image={item.image} review={item.review} reviewers={item.reviewers} />
+            ))
+          }
+          {/* product-card */}
+
+
+        </div>
+
+      </div>
+
+      {/* <div className="">
         {
           dummyData.map((data, index) => (
             <ProductGrid key={index} title={data.title} banner={data.banner} items={data.items} />
           ))
         }
-      </div>
+      </div> */}
 
       <OutletAddress />
 

@@ -18,64 +18,76 @@ export default function BannerCarousel() {
         zIndex: 10,
     };
 
+    /**
+     * title char-length: 10
+     * message char-length: 20
+     */
     const carouseItems = [
         {
             id: 1,
-            image: "/images/new_arrivals_bg1.jpg",
-            title: "Houseware",
+            image: "/images/carousel/carousel_img1.jpg",
+            title: "Soup plates",
+            message: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat, asperiores!",
+            bgColor: "#ffffff",
             textColor: '#000000',
-            buttonBg: '#ffffff',
-            buttonText: "Shop now",
-            link: "/houseware"
         },
         {
             id: 2,
-            image: "/images/sale_bg3.jpg",
-            title: "Hotelware",
-            textColor: '#000000',
-            buttonBg: '#ffffff',
-            buttonText: "Shop now",
-            link: "/hotelware"
+            image: "/images/carousel/carousel_img2.jpg",
+            title: "Dinner sets",
+            message: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem necessitatibus consectetur cupiditate vitae? Pariatur necessitatibus mollitia facilis ipsa fugit quo expedita amet, nulla voluptate doloribus cum sunt voluptatum velit eius?",
+            bgColor: "#ffffff",
+            textColor: '#000000'
         },
         {
             id: 3,
-            image: "/images/ciramic1.jpg",
+            image: "/images/carousel/carousel_img3.jpg",
+            title: "Giftboxes",
+            message: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat, asperiores!",
+            bgColor: "#f8aaaa",
+            textColor: '#000000',
+        },
+        {
+            id: 4,
+            image: "/images/carousel/carousel_img4.jpg",
             title: "Giftware",
+            message: "Lorem ipsum dolor sit amet consectetur adipisicing elit skjkd wer abrt alkss.",
+            bgColor: "#000000",
             textColor: '#ffffff',
-            buttonBg: '#000000',
-            buttonText: "Shop now",
-            link: "/giftware"
-        }
+        },
+        // {
+        //     id: 5,
+        //     image: "/images/carousel/carousel_img5.jpg",
+        //     title: "Giftware",
+        //     textColor: '#ffffff',
+        //     buttonBg: '#000000',
+        //     buttonText: "Shop now",
+        //     link: "/giftware"
+        // },
+        // {
+        //     id: 6,
+        //     image: "/images/carousel/carousel_img6.jpg",
+        //     title: "Giftware",
+        //     textColor: '#ffffff',
+        //     buttonBg: '#000000',
+        //     buttonText: "Shop now",
+        //     link: "/giftware"
+        // }
     ];
 
 
     return (
-        <div className="w-full mt-[150px]">
+        <div className="w-full">
             <Slider {...settings}>
                 {
                     carouseItems.length > 0 && carouseItems.map((item) => (
-                        <div key={item.id} className="w-full h-[800px] relative">
+                        <div key={item.id} className="w-full h-[75vh] 2xl:h-[80vh] relative">
                             <div className="navbar-transparent-fg w-full h-full"></div>
-                            <Image src={item.image} alt={item.title} fill style={{ objectFit: "cover" }} />
-                            <div className="absolute z-10 right-3 md:right-14 bottom-50 md:bottom-40">
-                                <h1 className='text-[70px] md:text-[100px] a_bold' style={{ color: item.textColor }}>{item.title}</h1>
-                                <div className="flex justify-end mt-2">
-                                    <button className='group cursor-pointer border text-[16px] md:text-[18px] w-[120px] md:w-[148px] h-[48px] 
-                            p_semibold hover:bg-[${item.buttonBg}] hover:text-[${item.textColor}] hover:border-none 
-                            flex items-center justify-center'
-                            style={{ borderColor: item.textColor, color: item.textColor}}>
-                                        <p>
-                                            <Link href={item.link}>Shop now</Link>
-                                        </p>
-                                        <Image
-                                            src="/images/icons/chevron_forward.svg"
-                                            alt="go"
-                                            height={24}
-                                            width={24}
-                                            className="opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                                        />
-                                    </button>
-                                </div>
+                            <Image src={item.image} alt={item.title} fill style={{ objectFit: "cover", aspectRatio: "1.37" }} />
+                            <div className="text-right absolute z-10 right-3 md:right-10 bottom-10 
+                            md:bottom-16 p-3 max-w-[75%] md:max-w-[65%] xl:max-w-[39.0625%] carousel-text-bg">
+                                <h1 className='text-[clamp(40px,6vw,75px)] md:text-[clamp(80px,6vw,100px)] font-poppins font-medium' style={{ color: item.textColor, textShadow: '0 8px 20px rgba(0,0,0,0.45)' }}>{item.title}</h1>
+                                <p className="font-poppins font-xl" style={{ color: item.textColor }}>{item.message}</p>
                             </div>
                         </div>
                     ))
