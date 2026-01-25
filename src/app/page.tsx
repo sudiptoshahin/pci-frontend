@@ -1,13 +1,10 @@
 "use client"
 
 import PromotionalSection from "@/components/common/promotionalsection";
-import ProductGrid from "@/components/products/ProductGrid";
 import OutletAddress from "@/components/common/outletaddress";
 import PromotionalVideo from "@/components/common/promotionalvideo";
 import Navbar from "@/components/common/navbar";
 import BannerCarousel from "@/components/carousels/BannerCarousel";
-import Link from "next/link";
-import Image from "next/image";
 import ProductItem from "@/components/products/ProductItem";
 
 export default function Home() {
@@ -169,7 +166,7 @@ export default function Home() {
 
           {
             demoHotelwearItems.map((item) => (
-              <ProductItem id={item.id} title={item.title} price={item.price} discountedPrice={item.discountedPrice} image={item.image} review={item.review} reviewers={item.reviewers} />
+              <ProductItem key={item.id} id={item.id} title={item.title} price={item.price} discountedPrice={item.discountedPrice} image={item.image} review={item.review} reviewers={item.reviewers} />
             ))
           }
           {/* product-card */}
