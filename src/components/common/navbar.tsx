@@ -8,14 +8,10 @@ import iconMob from "../../../public/images/icons/mobile.svg";
 import MultiCheckedSelectBox from "./MultiSelectCheckbox";
 import { ISelectedCategory } from "@/types/common";
 import SearchIcon from "../../../public/images/icons/magnify.svg";
-import CartIcon from "../../../public/images/icons/cart.svg";
 import CartWhiteIcon from "../../../public/images/icons/cart_white.svg";
 import NotificationWhiteIcon from "../../../public/images/icons/notification_white.svg";
 import AccountWhiteIcon from "../../../public/images/icons/account_white.svg";
-import NotificationIcon from "../../../public/images/icons/notification.svg";
-import AccountIcon from "../../../public/images/icons/account.svg";
 import MobMenuIcon from "../../../public/images/icons/menu.svg";
-// import MobOpenMenuIcon from "../../../public/images/icons/menu_open.svg";
 import OpenMobMenuIcon from "../../../public/images/icons/menu_open.svg";
 import Drawer from "./Drawer";
 import Cart from "./Cart";
@@ -58,11 +54,6 @@ export default function Navbar() {
             value: 'TEST_E'
         }
     ];
-
-    function handleShowMenu(e: React.MouseEvent<HTMLDivElement, MouseEvent>) {
-        e.stopPropagation();
-        setIsMenuOpen(!isMenuOpen);
-    }
 
     function handleSearchText(e: React.ChangeEvent<HTMLInputElement>) {
         setSearchText(e.target.value)

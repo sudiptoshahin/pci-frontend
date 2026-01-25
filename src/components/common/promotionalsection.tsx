@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
 import ArrowRightIcon from "../../../public/images/icons/arrow_right.svg";
 
 export default function PromotionalSection() {

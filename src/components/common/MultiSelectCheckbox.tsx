@@ -1,13 +1,6 @@
 import { useState, useRef, useEffect, Dispatch, SetStateAction } from 'react';
-import { ICategory } from '@/types/products';
 import { IOption, ISelectedCategory } from '@/types/common';
-import Image from 'next/image';
 import { MdArrowDropDown } from "react-icons/md";
-import { IconContext } from "react-icons";
-
-
-// import { Image } from 'antd';
-// import { ReportService } from '../../services/reports-services';
 
 interface ICheckedColor {
     background: string;

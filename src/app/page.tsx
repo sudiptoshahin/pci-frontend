@@ -6,50 +6,10 @@ import PromotionalVideo from "@/components/common/promotionalvideo";
 import Navbar from "@/components/common/navbar";
 import BannerCarousel from "@/components/carousels/BannerCarousel";
 import ProductItem from "@/components/products/ProductItem";
+import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
-
-  const dummyData = [
-    {
-      title: "Houseware",
-      banner: "/images/houseware.jpg",
-      items: [
-        { title: "Lorem ipsum dolor", price: '1000', image: '/images/houseware/houseware1.webp' },
-        { title: "Lorem ipsum", price: '3000', image: '/images/houseware/houseware2.webp' },
-        { title: "Lorem sums wndk", price: '2500', image: '/images/houseware/houseware3.webp' },
-        { title: "Lorem esmd jdfpod", price: '5000', image: '/images/houseware/houseware4.webp' },
-        { title: "Lorem esmd wndk", price: '4500', image: '/images/houseware/houseware5.webp' },
-        { title: "Lorem jdfpod wndk", price: '1500', image: '/images/houseware/houseware6.webp' },
-        { title: "Esmd lorem wndak", price: '10000', image: '/images/houseware/houseware7.webp' },
-      ]
-    },
-    {
-      title: "Hotelware",
-      banner: "/images/hotelware.jpg",
-      items: [
-        { title: "Lorem ipsum dolor", price: '1500', image: '/images/hotelware/hotelware1.webp' },
-        { title: "Lorem ipsum", price: '4500', image: '/images/hotelware/hotelware2.webp' },
-        { title: "Lorem sums wndk", price: '3000', image: '/images/hotelware/hotelware3.webp' },
-        { title: "Lorem esmd jdfpod", price: '1000', image: '/images/hotelware/hotelware4.webp' },
-        { title: "Lorem esmd wndk", price: '2500', image: '/images/hotelware/hotelware5.webp' },
-        { title: "Lorem jdfpod wndk", price: '1000', image: '/images/hotelware/hotelware6.webp' },
-        { title: "Esmd lorem wndak", price: '2000', image: '/images/hotelware/hotelware7.webp' },
-      ]
-    },
-    {
-      title: "Giftware",
-      banner: "/images/giftware.jpg",
-      items: [
-        { title: "Lorem ipsum dolor", price: '10000', image: '/images/giftware/giftware1.webp' },
-        { title: "Lorem ipsum", price: '2500', image: '/images/giftware/giftware2.webp' },
-        { title: "Lorem sums wndk", price: '1000', image: '/images/giftware/giftware3.webp' },
-        { title: "Lorem esmd jdfpod", price: '7000', image: '/images/giftware/giftware4.webp' },
-        { title: "Lorem esmd wndk", price: '4500', image: '/images/giftware/giftware5.webp' },
-        { title: "Lorem jdfpod wndk", price: '1000', image: '/images/giftware/giftware6.webp' },
-        { title: "Esmd lorem wndak", price: '8000', image: '/images/giftware/giftware7.webp' },
-      ]
-    }
-  ];
 
   const demoHotelwearItems = [
     {

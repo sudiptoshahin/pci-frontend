@@ -34,14 +34,14 @@ export default function ProductGrid({ title, banner, items }: { title: string, b
                 </div>
 
                 {/* Product Items */}
-                {items.map((item, index) => (
+                {/* {items.map((item, index) => (
                     <ProductItem
                         key={index}
                         title={item.title}
                         price={item.price}
                         image={item.image}
                     />
-                ))}
+                ))} */}
             </div>
 
             {/* See More Button */}

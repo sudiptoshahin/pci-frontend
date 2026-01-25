@@ -4,7 +4,6 @@ import Slider from "react-slick";
 import Image from "next/image";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import Link from "next/link";
 
 export default function BannerCarousel() {
     const settings = {
